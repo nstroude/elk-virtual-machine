@@ -1,0 +1,158 @@
+Real time processes
+
+Command : top
+
+
+Static view of processes
+
+Command: ps aux >> ~/currently_running_processes
+
+
+Kill processes taking up memory resources
+
+Command: sudo kill 4714 4715
+
+
+Kill all processes being run by someone with a specific username
+
+Command: sudo killall –u jack
+
+
+Install a security package from a repository
+
+Command: sudo apt –y install emacs cowsay fortune
+
+
+Run etc shadow file against john to crack a password
+
+Command: sudo john shadow_copy
+
+
+Print what sudo privileges an admin user has
+
+Command: sudo – l
+
+
+Print the access of all users in a file
+
+Command: sudo – lu jack adam billy sally max >> ~/research/sudo_access.txt
+
+
+Switch to another user (once I get pw)
+
+Sudo su max
+
+Remove a user from having sudo access
+
+Visudo /etc/sudoers
+
+Sudo visudo
+
+Max ALL=(ALL) /usr/bin/less  (remove this entry and save)
+
+
+Display all user user id and permissions by username
+
+Command: id sysadmin jack adam billy sally max
+
+
+Print groups that users belong to
+
+Command: groups sysadmin jack adam billy sally max
+
+
+Remove a user form a group
+
+Command: sudo usermod –G jack jack
+
+
+Remove a user from the system along with their home directory
+
+Command: sudo deluser --remove-home jack
+
+
+Create a group
+
+Command: sudo addgroup developers
+
+
+Add users to a group
+
+Command: sudo usermod –G developers jack adam billy sally max
+
+
+Remove a group
+
+Command: sudo delgroup hax0rs
+
+
+
+
+Show permissions on a group
+
+Command : ls –l /etc/shadow /etc/gshadow /etc/group /etc/passwd
+
+
+Change octal file permission
+
+Command: sudo cmod 600 /etc/shadow
+
+
+See what services are running
+
+Command: systemctl –t service –all
+
+
+Stop a service
+
+Command: sudo systemctl stop vsftpd.service apache2.service nginx.service 
+
+
+
+Verify status of service
+
+Command systemctl status vsftpd.service apache2.service nginx.service
+
+
+Disable a service
+
+Command: sudo systemctl disable vsftpd.service
+
+
+Remove a service from the system
+
+Command: sudo apt remove vsftpd.service
+
+
+Create a tripwire user
+
+Command: sudo adduser –sysem –no-create-home tripwire
+
+
+Make user a service user 
+
+Command: id tripwire  (verify id  is less than 1000 for service users)
+
+
+Verify there is no home folder
+
+Command: ls /home
+
+
+Verify user is locked with no password and there is no login shell
+
+Command: sudo /etc/shadow
+
+
+Allow user to only run a specific service with sudo priviledges
+
+Command: sudo visudo
+
+Command: tripwire ALL=NOPASSWD: /usr/sbin/tripwire
+
+
+Change permission to only allow the owner to execute
+
+Command: which tripwire
+
+Command: sudo chmod 700 /usr/sbin/tripwire
