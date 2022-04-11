@@ -34,20 +34,20 @@ _Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdow
 
 | Name     | Function | IP Address | Operating System |
 |----------|----------|------------|------------------|
-| Jump Box | Gateway  | 10.0.0.1   | Linux            |
-| TODO     |          |            |                  |
-| TODO     |          |            |                  |
-| TODO     |          |            |                  |
+| Jump Box | Gateway  | 10.0.0.4   | Linux Ubuntu     |
+| Web1     |Web Server| 10.0.0.5   | Linux Ubuntu     |
+| Web2     |Web Server| 10.0.0.7   | Linux Ubuntu     |
+| Elk vm   | Elk Stack| 10.1.0.5   | Linux Ubuntu     |
 
 ### Access Policies
 
 The machines on the internal network are not exposed to the public Internet. 
 
-Only the _____ machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses:
-- _TODO: Add whitelisted IP addresses_
+Only the jumpbox machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses:
+- 
 
 Machines within the network can only be accessed by _____.
-- _TODO: Which machine did you allow to access your ELK VM? What was its IP address?_
+- _TODO: Which machine did you allow to access your ELK VM? What was its IP address?20.120.25.11
 
 A summary of the access policies in place can be found in the table below.
 
