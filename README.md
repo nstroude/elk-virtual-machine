@@ -83,7 +83,7 @@ This ELK server is configured to monitor the following machines:
 We have installed the following Beats on these machines:
 Both filebeats and metricbeats are installed on the web vm's
 
-These Beats allow us to collect the following information from each machine:
+These Beats allow us to collect the following information from each machine
 -Filebeats organize log files from Apache, Azure tools, Nginx webserver and My SQL database and sends it to Logstash and Elasticsearch to be searched and monitored
 -Metricbeats collects measurements of a systems resources such as cpu usage and memory make sure the machine is working efficiently
 
@@ -91,13 +91,8 @@ These Beats allow us to collect the following information from each machine:
 In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned: 
 
 SSH into the control node and follow the steps below:
-- Copy the _____ file to _____.
-- Update the _____ file to include...
-- Run the playbook, and navigate to ____ to check that the installation worked as expected.
-
-_TODO: Answer the following questions to fill in the blanks:_
-- _Which file is the playbook? Where do you copy it?_
-- _Which file do you update to make Ansible run the playbook on a specific machine? How do I specify which machine to install the ELK server on versus which to install Filebeat on?_
-- _Which URL do you navigate to in order to check that the ELK server is running?
+- Copy the elk.yml file to /etc/ansible/roles/elk.yml
+- Update the host file to include the [elk] atribute and the elk servers ip address 10.1.0.5 followed by the line ansible_python_interpreter=/usr/bin/python3
+- Run the playbook, and navigate to the url http://10.1.0.5:5601/app/kibana to check that the installation worked as expected.
 
 _As a **Bonus**, provide the specific commands the user will need to run to download the playbook, update the files, etc._
